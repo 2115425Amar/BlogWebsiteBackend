@@ -1,89 +1,78 @@
-Blog Backend API
-This is a backend API for a blogging platform built with Node.js and Express. The API allows users to create posts, comment on posts, and like/unlike posts.
+## API Documentation
 
-Prerequisites
-Node.js
-npm or yarn
-MongoDB
-Getting Started
-Installation
-Clone the repository:
-git clone 
-cd blog-backend
-npm install
-Set up environment variables:
+This document provides a guide to the functionalities offered by the API. 
 
-Create a .env file in the root of the project and add your MongoDB URI and other necessary environment variables:
-PORT=8000
-DATABASE_URL=your_mongodb_uri
-Running the Server
-Start the server with:npm start
+**Base URL:** http://localhost:8000/api/v1/
 
+**Data Format:** JSON
 
-The server will start on the port specified in the .env file (default is 8000).
+**Authentication:** (Note: Authentication details are not included here, assuming they are implemented elsewhere)
 
-API Endpoints
-Create a Post
-Endpoint: POST /api/v1/posts/create
+### Posts
 
-Request Body:
+**Create Post:**
+
+* **Method:** POST
+* **Endpoint:** /posts/create
+* **Request Body:**
+    * title (string): Title of the post
+    * body (string): Content of the post
+* **Example Request:**
+
+```json
 {
   "title": "C",
   "body": "3"
 }
 
+Get All Posts:
 
-Description: This endpoint creates a new post.
+Method: GET
+Endpoint: /posts
+Comments
 
-Get All Posts
-Endpoint: GET /api/v1/posts
-Description: This endpoint retrieves all posts.
-Create a Comment
-Endpoint: POST /api/v1/comments/create
+Create Comment:
 
+Method: POST
+Endpoint: /comments/create
 Request Body:
+post (string): ID of the post the comment belongs to
+user (string): Username of the person commenting
+body (string): Content of the comment
+Example Request:
+JSON
 {
   "post": "669b956edae25fe63b6967a0",
   "user": "lulla bhai",
   "body": "tum bahut mast kaam karta hai"
 }
 
-Description: This endpoint creates a new comment on a post.
+Likes
+Like a Post:
 
-Like a Post
-Endpoint: POST /api/v1/likes/like
-
+Method: POST
+Endpoint: /likes/like
 Request Body:
+post (string): ID of the post to like
+user (string): Username of the user liking the post
+Example Request:
+JSON
 {
   "post": "669b956edae25fe63b6967a0",
   "user": "Amar"
 }
-Description: This endpoint likes a post.
+Use code with caution.
 
-Unlike a Post
-Endpoint: POST /api/v1/likes/unlike
+Unlike a Post:
 
+Method: POST
+Endpoint: /likes/unlike
 Request Body:
+post (string): ID of the post to unlike
+like (string): ID of the like to be removed (unique identifier for the like entry)
+Example Request:
+JSON
 {
   "post": "669b956edae25fe63b6967a0",
   "like": "669b9601dae25fe63b6967ad"
 }
-
-
-Database Configuration
-Ensure MongoDB is running and the connection URI is correctly set in the .env file.
-
-Contributing
-Fork the repository
-Create a new branch (git checkout -b feature-branch)
-Commit your changes (git commit -m 'Add new feature')
-Push to the branch (git push origin feature-branch)
-Open a Pull Request
-License
-This project is licensed under the MIT License. See the LICENSE file for details.
-
-Contact
-For any questions or inquiries, please contact:
-
-Your Name -amar8601082@gmail.com
-GitHub: https://github.com/2115425Amar
