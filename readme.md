@@ -61,7 +61,6 @@ JSON
   "post": "669b956edae25fe63b6967a0",
   "user": "Amar"
 }
-Use code with caution.
 
 Unlike a Post:
 
