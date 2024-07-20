@@ -3,14 +3,14 @@ const Like = require("../models/likeModel");
 
 exports.likePost = async (req,res)=>{
    try{
-    const {post,user} = req.body();
+    const {post,user} = req.body;
     const like = new Like({
         post,user,
     })
     const savedLike = await like.save();
 
-    const updatedPost = await Post.findByIdAndUpdate(post,{$push:savedLike._id},{new:true})
-    .populate("likes").exec();
+    const updatedPost = await Post.findByIdAndUpdate(post,{$push:{likes:savedLike._id} },{new:true})
+   .populate("likes").exec();
 
     res.json({
         post:updatedPost,
@@ -30,13 +30,12 @@ exports.likePost = async (req,res)=>{
 
 exports.unlikePost = async (req,res)=>{
     try{
-     const {post,like} = req.body();
+     const {post,like} = req.body;
  
-     const deletedLike = await Like.findOneAndUpdate({post:post,_id:like});
+     const deletedLike = await Like.findOneAndDelete({post:post, _id:like});
 
      //update the post collection
-     const updatedPost = await Post.findByIdAndDelete(post, {$pull:{likes:deletedLike._id}},{new:true})
-
+     const updatedPost = await Post.findByIdAndUpdate(post, {$pull:{likes:deletedLike._id}},{new:true})
      
      res.json({
          post:updatedPost,
@@ -54,6 +53,6 @@ exports.unlikePost = async (req,res)=>{
     }
  }
 
-exports.dummyLikes=async(req,res)=>{
+exports.dummyLink= (req,res)=>{
     res.send("this is your dummy route");
-}
+};
