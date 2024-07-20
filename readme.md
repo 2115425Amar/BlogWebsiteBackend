@@ -24,14 +24,13 @@ This document provides a guide to the functionalities offered by the API.
   "title": "C",
   "body": "3"
 }
+#----
+**Get All Posts:**
 
-Get All Posts:
+* **Method:** GET
+* **Endpoint:** /posts
 
-Method: GET
-Endpoint: /posts
-Comments
-
-Create Comment:
+**Create Comment:**
 
 Method: POST
 Endpoint: /comments/create
