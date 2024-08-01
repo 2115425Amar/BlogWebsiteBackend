@@ -173,6 +173,6 @@ Contributions are welcome! Please fork the repository and submit a pull request 
 
 ## Contact
 
-For any questions or support, please contact [Your Name] at [amar8601082@gmail.com].
+For any questions or support, please contact Amar Gupta at [amar8601082@gmail.com].
 
 ---
