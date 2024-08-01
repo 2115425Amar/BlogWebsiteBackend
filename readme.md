@@ -2,12 +2,14 @@
 
 ## Overview
 
-This API provides functionality to manage blog posts, comments, and likes. It includes endpoints for creating posts, creating comments, liking and unliking posts, and retrieving all posts.
+This API provides functionality to manage blog posts, comments, and likes. It includes endpoints for creating, updating, and deleting posts, as well as adding comments and liking or unliking posts.
 
 ## Features
 
 - **Create Post**: Add a new blog post.
 - **Get All Posts**: Retrieve a list of all blog posts.
+- **Update Post**: Modify an existing post.
+- **Delete Post**: Remove a post from the database.
 - **Create Comment**: Add a comment to a specific post.
 - **Like a Post**: Like a specific post.
 - **Unlike a Post**: Remove a like from a specific post.
@@ -23,7 +25,7 @@ This API provides functionality to manage blog posts, comments, and likes. It in
 2. **Navigate to the Project Directory:**
 
    ```bash
-   cd your-repository
+   cd BlogWebsiteBackend
    ```
 
 3. **Install Dependencies:**
@@ -73,6 +75,31 @@ This API provides functionality to manage blog posts, comments, and likes. It in
     "body": "This is the content of the post."
   }
   ```
+
+### Update Post
+
+- **Method:** `PUT`
+- **Endpoint:** `/api/v1/posts/update/:id`
+- **Request Body:**
+  ```json
+  {
+    "title": "string",  // Updated title of the post
+    "body": "string"    // Updated content of the post
+  }
+  ```
+- **Example Request:**
+  ```json
+  {
+    "title": "Updated Post Title",
+    "body": "Updated content of the post."
+  }
+  ```
+
+### Delete Post
+
+- **Method:** `DELETE`
+- **Endpoint:** `/api/v1/posts/delete/:id`
+- **Description:** Deletes a specific post by its ID.
 
 ### Create Comment
 
@@ -138,7 +165,9 @@ This API provides functionality to manage blog posts, comments, and likes. It in
 ### PostController
 
 - **`createPost`**: Creates a new post in the database.
-- **`getAllPost`**: Retrieves all posts from the database.
+- **`getAllPosts`**: Retrieves all posts from the database.
+- **`updatePost`**: Updates an existing post in the database.
+- **`deletePost`**: Deletes a post from the database.
 
 ### CommentController
 
@@ -159,6 +188,7 @@ Ensure that you have MongoDB running and configured properly. The connection str
 The API provides standard HTTP status codes to indicate the success or failure of requests. Common status codes include:
 
 - **200 OK**: The request was successful.
+- **201 Created**: The resource was successfully created.
 - **400 Bad Request**: The request was invalid or malformed.
 - **404 Not Found**: The requested resource could not be found.
 - **500 Internal Server Error**: An error occurred on the server.
@@ -169,7 +199,7 @@ Contributions are welcome! Please fork the repository and submit a pull request 
 
 ## License
 
-<!-- This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details. -->
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## Contact
 
