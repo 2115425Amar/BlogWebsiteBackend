@@ -39,7 +39,7 @@ This API provides functionality to manage blog posts, comments, and likes. It in
    Create a `.env` file in the root directory and add the following environment variables:
 
    ```plaintext
-   PORT=3000
+   PORT=8000
    MONGO_URI=your_mongodb_connection_string
    ```
 

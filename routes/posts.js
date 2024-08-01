@@ -4,7 +4,7 @@ const router = express.Router();
 //import controller
 const {  dummyLink, likePost, unlikePost } = require("../controllers/LikeController");
 const { createComment } = require("../controllers/CommentController");
-const { createPost, getAllPost } = require("../controllers/PostController");
+const { createPost, getAllPost, updatePost, deletePost } = require("../controllers/PostController");
 
 //define API routes -- MAPPING
 router.get("/dummyroute",dummyLink)
