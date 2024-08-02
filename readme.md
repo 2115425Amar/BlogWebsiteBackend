@@ -116,7 +116,7 @@ This API provides functionality to manage blog posts, comments, and likes. It in
 - **Example Request:**
   ```json
   {
-    "post": "669b956edae25fe63b6967a0",
+    "post": "_id",   //id of the post on which you want to comment
     "user": "lulla bhai",
     "body": "tum bahut mast kaam karta hai"
   }
@@ -136,7 +136,7 @@ This API provides functionality to manage blog posts, comments, and likes. It in
 - **Example Request:**
   ```json
   {
-    "post": "669b956edae25fe63b6967a0",
+    "post": "post_id",
     "user": "Amar"
   }
   ```
